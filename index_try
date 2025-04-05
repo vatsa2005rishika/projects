@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adamas University</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container" id="login-container">
+        <!-- Left Section with Welcome -->
+        <div class="left-section">
+            <h1 class="welcome-text">Welcome to <br><span>Adamas University</span></h1>
+            <p class="motto">"Pursue Excellence"</p>
+        </div>
+
+        <!-- Right Section with Login Form -->
+        <div class="right-section">
+            <div class="form-container">
+                <h2>Login</h2>
+
+                <!-- Login Form -->
+                <form action="login.php" method="POST">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+
+                    <button type="submit">Login</button>
+                </form>
+
+                <!-- Sign Up Option -->
+                <p class="footer-text">New user? <a href="#" onclick="showSignUp()">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="signup-container" style="display: none;">
+        <!-- Left Section with Welcome Text -->
+        <div class="left-section">
+            <h1 class="welcome-text">Join <br><span>Adamas University</span></h1>
+            <p class="motto">"Pursue Excellence"</p>
+        </div>
+
+        <!-- Right Section with Sign Up Form -->
+        <div class="right-section">
+            <div class="form-container">
+                <h2>Sign Up</h2>
+
+                <!-- Sign Up Form -->
+                <form action="signup.php" method="POST">
+                    <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+                    <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+                    <input type="text" id="reg-no" name="reg-no" placeholder="Enter your registration number" required>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <input type="date" id="dob" name="dob" required>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <button type="submit">Sign Up</button>
+                </form>
+
+                <!-- Already have an account -->
+                <p class="footer-text">Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Show Sign Up Page
+        function showSignUp() {
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('signup-container').style.display = 'flex';
+        }
+
+        // Show Login Page
+        function showLogin() {
+            document.getElementById('signup-container').style.display = 'none';
+            document.getElementById('login-container').style.display = 'flex';
+        }
+    </script>
+
+
+</body>
+
+</html>
